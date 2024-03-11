@@ -3,7 +3,7 @@ function multiplicacao(b: number,a: number): number {
 }
 
 function saudacao(nome:string){
-    console.log("Olá  " + nome); 
+    return "Olá" + nome; 
 }
 
 
