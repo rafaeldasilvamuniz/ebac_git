@@ -1,81 +1,166 @@
-<script setup>
-//import HelloWorld from './components/HelloWorld.vue'
-//import TheWelcome from './components/TheWelcome.vue'
-import { reactive } from 'vue';
-
-const estado = reactive({
- filtro: "+",
- input1: "",
- input2: "",
- resultado: ""
-})
-
-new calculo({
-	soma: '#app',
-	data: {
-		count1: 0,
-		count2: 0,
-		result: 0
-	},
-	methods: {
-		sum(){
-           return result = this.count1 + this.count2;
-		}
-	}
-});
-
-</script>
-
 <template>
-  <header>
-    <!--<img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div>
+   <header>
+    <h1>Calculadora</h1>
+   </header>
+   <main>
+    <label>Número 1 : </label>
+    
+   <div>
+    
+    <div v-if="calcularSoma">
+     <input
+      v-model="estado.input1"
+      @input="calcularSoma"
+      type="number"
+      class="form-control no-spinner"
+      placeholder="Adicionar Número"
+     />
+    </div>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>-->
-  </header>
+    <div v-else-if="calcularMultiplicacao">
+      <input v-model="estado.input1"
+       @input="calcularMultiplicacao" 
+       type="number"
+       class="form-control no-spinner"
+       placeholder="Adicionar Número"
+       >
+    </div>
 
-  <main>
-    <!--<TheWelcome />-->
-      <h1>Calculadora</h1><br>
-  </main>
-  <label>Número 1  :   </label>
-  <input v-model="estado.input1" @input="mostraResultado" type="number" class="form-control no-spinner" placeholder="Adicionar Número" value="Resultado"><br><br>
-  <label>Número 2  :   </label>
-  <!--<input v-model="estado.input2" @input="mostraResultado" type="number" class="form-control no-spinner" placeholder="Adicionar Número" value="Resultado"><br><br>
-  <input type="button" onclick="Calcular('txtValor1', 'txtValor2')" value="Calcular"><br><br>
-  <input type="button" onclick="Limpar('input1','input2')" value="Limpar"><br><br>-->
-  <div id="app">
-    <span>{{  }}</span>
+    <div v-else-if="calcularDiminuicao">
+      <input v-model="estado.input1"
+       @input="calcularDiminuicao" 
+       type="number"
+       class="form-control no-spinner"
+       placeholder="Adicionar Número"
+       >
+    </div>
+    
+    <div v-else-if="calcularDivisao">
+      <input v-model="estado.input1"
+       @input="calcularDivisao" 
+       type="number"
+       class="form-control no-spinner"
+       placeholder="Adicionar Número"
+       >
+    </div>
+
   </div>
-</template>
 
-<!--<style scoped>
-/*header {
-  line-height: 1.5;
-}
+    <br /><br />
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+    <label>Número 2 : </label>
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+  <div>
+    
+    <div v-if="calcularSoma">
+    <input
+     v-model="estado.input2"
+     @input="calcularSoma"
+     type="number"
+     class="form-control no-spinner"
+     placeholder="Adicionar Número"
+    />
+    </div>
+    
+    <div v-else-if="calcularMultiplicacao">
+    <input
+     v-model="estado.input2"
+     @input="calcularMultiplicacao"
+     type="number"
+     class="form-control no-spinner"
+     placeholder="Adicionar Número"
+    />
+    </div>
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+    <div v-else-if="calcularDiminuicao">
+    <input
+     v-model="estado.input2"
+     @input="calcularDiminuicao"
+     type="number"
+     class="form-control no-spinner"
+     placeholder="Adicionar Número"
+    />
+    </div>
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+     <div v-else-if="calcularDivisao">
+    <input
+     v-model="estado.input2"
+     @input="calcularDivisao"
+     type="number"
+     class="form-control no-spinner"
+     placeholder="Adicionar Número"
+    />
+    </div>
 
-}*/
-</style>-->
+  </div>
+
+    <br /><br />
+    
+    <label>Soma : </label>
+    <span>{{ estado.resultadoSoma }}</span><br><br>
+    
+
+    <label>Multiplicação : </label>
+      <span>{{ estado.resultadoMult }}</span><br><br>
+    
+
+    <label>Subtração : </label>
+    <span>{{ estado.resultadoDimin }}</span><br><br>
+
+
+    <label>Divisão : </label>
+      <span>{{ estado.resultadoDiv }}</span><br><br>
+    
+  
+  </main>
+  </div>
+ </template>
+ 
+ <script setup>
+ import { reactive } from "vue";
+ 
+ const estado = reactive({
+  input1: 0,
+  input2: 0,
+  resultadoSoma: 0,
+  resultadoMult: 0,
+  resultadoDimin: 0,
+  resultadoDiv:0
+ });
+ 
+ const calcularSoma = () => {
+  estado.resultadoSoma = estado.input1 + estado.input2;
+ };
+
+ const calcularMultiplicacao = () => {
+  estado.resultadoMult = estado.input1 * estado.input2;
+ };
+
+ const calcularDiminuicao = () => {
+  estado.resultadoDimin = estado.input1 - estado.input2;
+ };
+
+ const calcularDivisao = () => {
+  estado.resultadoDiv = estado.input1 / estado.input2;
+ };
+ 
+ </script>
+ 
+ <style scoped>
+ /* Estilos opcionais */
+   /*@input="calcularResultado"*/
+   /*@input="calcularResultado"*/
+ header {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+ }
+ main {
+  padding: 20px;
+ }
+ input[type="number"] {
+  width: 100px;
+ }
+ </style>
+ 
