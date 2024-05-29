@@ -80,8 +80,8 @@
 				
 			</select>
 			
-		<input type="button" onclick="Calcular('txtValor1', 'txtValor2')" value="Calcular">
-		<input type="button" onclick="Limpar('txtValor1', 'txtValor2')" value="Limpar">
+		<input type="button" @click="Calcular('txtValor1', 'txtValor2')" value="Calcular">
+		<input type="button" v-on:click="Limpar('txtValor1', 'txtValor2')" value="Limpar">
 		<h3 id="saida">Resultado:<span>{{ Calcular.resultado}}</span></h3>
 		<hr>		
 	</body>
