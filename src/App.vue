@@ -33,7 +33,7 @@
 				var StrExpressao = num1 + operador + num2;
 				//método eval realiza uma operaçao de strings e retorna do tipo number
 				resultado = eval(StrExpressao); break;					
-			/*case "raiz":
+			case "raiz":
 				resultado = "&radic;"+num1 + " = " + Math.sqrt(num1); break;					
 			case "potencia":
 				resultado = num1+"<sup>"+num2 +"</sup> = "+ Math.pow(num1, num2); break;					
@@ -46,7 +46,7 @@
 			case "media":
 				resultado = calcular['media'](); break;
 			case "calc":
-				resultado = eval(num1); break;*/
+				resultado = eval(num1); break;
 			default:
 				break;				
 			
@@ -76,6 +76,16 @@
 					<option value="-">	-(subtrair)</option>
 					<option value="*">	*(multiplicar)</option>
 					<option value="/">	/(dividir)</option>
+				</optgroup>
+
+				<optgroup label="Outros">
+					<option value="raiz">	 	  Raiz	</option>
+					<option value="potencia">	Potência</option>
+					<option value="fatorial">	Fatorial</option>
+					<option value="fibonacci">Fibonaci</option>					
+					<option value="porcento">	Porcentagem</option>
+					<option value="media">		Média</option>
+					<option value="calc">		  Develop Calc</option>
 				</optgroup>
 				
 			</select>
