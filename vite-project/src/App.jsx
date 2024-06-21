@@ -57,7 +57,7 @@ function criaP(className) {
       <div>
         <input type="text" id="altura" name="altura" onChange={(e) => setAlura(e.target.value)}></input>
        </div>
-      <button onClick={calculaImc}>
+      <button onClick={calculaImc()}>
                Enviar
        </button>
        <p>Resultado: {getNivelImc()}</p>
