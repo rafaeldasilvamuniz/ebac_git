@@ -70,8 +70,6 @@ function setResultado(msg, isValid) {
     resultado.appendChild(p);
 }
 
-const [count, setCount] = useState(0)
-
   return (
     <>
       <div>
@@ -92,21 +90,17 @@ const [count, setCount] = useState(0)
       <div className="card">
              <label><b>Altura</b></label>
             </div>
+    <div>
       <div>
-      <div>
-              <input type="text" id="altura" name="altura"></input>
-            </div>
-        <button onClick={() => setCount((count) => count + 1)}>
-                Enviar
-              </button>
-              <p>Resultado: {}</p>
-              <p>
-                Edit <code>src/App.jsx</code> and save to test HMR
-              </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <input type="text" id="altura" name="altura"></input>
+       </div>
+      <button onClick={}>
+               Enviar
+       </button>
+       <p>Resultado: {}</p>
+    
+    </div>
+     
     </>
   )
 }
