@@ -6,10 +6,10 @@ import './App.css'
 function App(){
 
 const [altura, setAltura] = useState('');
-const [peso, setAltura] = useState('');
-const [imc, setAltura] = useState('');    
+const [peso, setPeso] = useState('');
+const [imc, setImc] = useState('');    
 
-function getNivelImc(imc) {
+function getNivelImc() {
     const nivel = ['Abaixo do peso', 'Peso normal', 'Sobrepeso', 'Obesidade grau 1', 'Obesidade grau 2', 'Obesidade grau 3'];
 
     if (!imc) return '';
@@ -21,16 +21,16 @@ function getNivelImc(imc) {
     else if (imc < 18.5) return nivel[0];
 }
 
-function calculaImc(peso, altura) {
+function calculaImc() {
     const imc = peso / ((altura/100) ** 2);
     setImc(imc.toFixed(2));
    // return imc.toFixed(2);
 }
 
-function criaP(className) {
+/*function criaP(className) {
     const p = document.createElement('p');
     return p;
-}
+}*/
 
 
   return (
@@ -51,17 +51,16 @@ function criaP(className) {
         <input type="text" id="peso" name="peso" onChange={(e) => setPeso(e.target.value)}></input>
       </div>
       <div className="card">
-             <label><b>Altura</b></label>
-            </div>
+        <label><b>Altura</b></label>
+      </div>
     <div>
       <div>
-        <input type="text" id="altura" name="altura" onChange={(e) => setAlura(e.target.value)}></input>
-       </div>
-      <button onClick={calculaImc()}>
+         <input type="text" id="altura" name="altura" onChange={(e) => setAltura(e.target.value)}></input>
+      </div>
+      <button onClick={calculaImc}>
                Enviar
-       </button>
-       <p>Resultado: {getNivelImc()}</p>
-    
+      </button>
+       <p>Resultado: {getNivelImc()}</p>    
     </div>
      
     </>
