@@ -36,6 +36,7 @@ const FormVagas = ({ aoPesquisar }: Props) => {
     e.preventDefault()
     aoPesquisar(termo.toLocaleLowerCase())
   }
+  }
 
 function FormVagas(){
   return ( <Form>
