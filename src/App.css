@@ -1,0 +1,116 @@
+.App {
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.App-logo {
+  width: 2031.81px;
+  height: 200x;
+  top: 1850px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.App-efood{
+  width: 2031.81px;
+  height: 384px;
+  top: 1850px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.App-rodape{
+  width: 2031.81px;
+  height: 384px;
+  top: 1850px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.App-lista{
+  width: 1024px;
+  height: 1290px;
+  top: 440px;
+  left: 171px;
+  gap: 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  border: Mixed solid #E66767;
+}
+
+
+@media screen and (max-width: 2772px) {
+  .App-lista,.App-rodape,.App-logo,.App-efood {
+    width: 100%;
+  }
+}
+
+/*.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}*/
+
+.App-header {
+  width: 2031.81px;
+  height: 186px;
+  top: -23px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.App-layout {
+  width: 1366px;
+  height: 1624px;
+  top: -149px;
+  left: 1178px;
+  gap: 0px;
+  opacity: 0px;
+  background: #FFF8F2;
+}
+
+.App-produto {
+  width: 1024px;
+  height: 708px;
+  top: 498px;
+  left: 171px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.App-apresentacao {
+  width: 1366px;
+  height: 280px;
+  top: 162px;
+  gap: 0px;
+  opacity: 0px;
+  left: 1178px;
+  gap: 0px;
+  background: #FFF8F2;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
